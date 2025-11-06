@@ -13,8 +13,8 @@ type CancelOnErrorGroup struct {
 	firstError error
 }
 
-func NewCancelOnErrorGroup(num int) CancelOnErrorGroup {
-	return CancelOnErrorGroup{
+func NewCancelOnErrorGroup(num int) *CancelOnErrorGroup {
+	return &CancelOnErrorGroup{
 		handles: make([]func(context.Context) error, 0, num),
 	}
 }
